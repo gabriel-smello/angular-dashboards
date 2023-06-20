@@ -5,7 +5,11 @@
   "projects": {
     "angular-dashboards": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,6 +17,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "echarts/theme/macarons.js"
+            ],
             "outputPath": "dist/angular-dashboards",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -25,7 +32,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
+              "src/styles.scss",
+              "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/primeflex/primeflex.css",
               "./node_modules/primeicons/primeicons.css"
             ],
             "scripts": []
