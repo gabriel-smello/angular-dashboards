@@ -1,0 +1,10 @@
+@import "primeng/resources/primeng.css";
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeflex/primeflex";
+
+
+html, body, * {
+  margin: 0;
+  padding: 0;
+  background: #F5F5F5;
+}
