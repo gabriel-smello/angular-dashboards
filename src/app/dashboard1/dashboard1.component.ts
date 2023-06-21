@@ -15,6 +15,16 @@ export class Dashboard1Component implements OnInit {
   data: any[] = [];
   options: any[] = [];
   graphA: any;
+  graphB: any;
+  graphC: any;
+  graphD: any;
+  todosFiliados: number = 439;
+  comAnuidadePaga: number = 118;
+  comAnuidadePagaPercentage = ((this.comAnuidadePaga/ this.todosFiliados * 100).toFixed(0));
+  filiadosInadimplentes: number = 321;
+  filiadosInadimplentesPercentage = ((this.filiadosInadimplentes/ this.todosFiliados * 100).toFixed(0));
+  dadosIncompletos: number = 348
+  dadosIncompletosPercentage = ((this.dadosIncompletos/ this.todosFiliados * 100).toFixed(0));
 
   constructor() {
     this.users = [
@@ -134,39 +144,110 @@ export class Dashboard1Component implements OnInit {
   }
 
   ngOnInit() {
-
     this.graphA = {
       tooltip: {
-        trigger: 'item'
-      },
-      legend: {
-        top: '5%',
-        left: 'center'
+        trigger: 'item',
+        formatter: '{b}: {c} ({d}%)'
       },
       series: [
         {
-          name: 'Access From',
           type: 'pie',
-          radius: ['40%', '70%'],
+          radius: ['70%', '85%'],
           avoidLabelOverlap: false,
           label: {
-            show: false,
-            position: 'center'
-          },
-          emphasis: {
-            label: {
-              show: true,
-              fontSize: 40,
-              fontWeight: 'bold'
-            }
+            show: true,
+            position: 'center',
+            formatter: `{d}%`
           },
           labelLine: {
             show: false
           },
           data: [
-            { value: 1048, name: 'Search Engine' },
-            { value: 735, name: 'Direct' },
-          ]
+            { value: this.todosFiliados, name: 'Filiados' },
+            { value: 0, name: 'Total' }
+          ],
+          color: ['#40b0d0', '#E0E0E0']
+        }
+      ]
+    };
+
+    this.graphB = {
+      tooltip: {
+        trigger: 'item',
+        formatter: '{b}: {c} ({d}%)'
+      },
+      series: [
+        {
+          type: 'pie',
+          radius: ['70%', '85%'],
+          avoidLabelOverlap: false,
+          label: {
+            show: true,
+            position: 'center',
+            formatter: `${this.comAnuidadePagaPercentage}%`
+          },
+          labelLine: {
+            show: false
+          },
+          data: [
+            { value: this.comAnuidadePaga, name: 'Com anuidade paga' },
+            { value: this.todosFiliados - this.comAnuidadePaga, name: 'Outros' }
+          ],
+          color: ['#ed6796', '#E0E0E0']
+        }
+      ]
+    };
+
+    this.graphC = {
+      tooltip: {
+        trigger: 'item',
+        formatter: '{b}: {c} ({d}%)'
+      },
+      series: [
+        {
+          type: 'pie',
+          radius: ['70%', '85%'],
+          avoidLabelOverlap: false,
+          label: {
+            show: true,
+            position: 'center',
+            formatter: `${this.filiadosInadimplentesPercentage}%`
+          },
+          labelLine: {
+            show: false
+          },
+          data: [
+            { value: this.filiadosInadimplentes, name: 'Inadimplentes' },
+            { value: this.todosFiliados - this.filiadosInadimplentes, name: 'Outros' }
+          ],
+          color: ['#009689', '#E0E0E0']
+        }
+      ]
+    };
+
+    this.graphD = {
+      tooltip: {
+        trigger: 'item',
+        formatter: '{b}: {c} ({d}%)'
+      },
+      series: [
+        {
+          type: 'pie',
+          radius: ['70%', '85%'],
+          avoidLabelOverlap: false,
+          label: {
+            show: true,
+            position: 'center',
+            formatter: `${this.dadosIncompletosPercentage}%`
+          },
+          labelLine: {
+            show: false
+          },
+          data: [
+            { value: this.dadosIncompletos, name: 'Dados incompletos' },
+            { value: this.todosFiliados - this.dadosIncompletos, name: 'Dados completos' }
+          ],
+          color: ['#99a5ab', '#E0E0E0']
         }
       ]
     };
