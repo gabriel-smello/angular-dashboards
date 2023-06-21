@@ -20,11 +20,11 @@ export class Dashboard1Component implements OnInit {
   graphD: any;
   todosFiliados: number = 439;
   comAnuidadePaga: number = 118;
-  comAnuidadePagaPercentage = ((this.comAnuidadePaga/ this.todosFiliados * 100).toFixed(0));
+  comAnuidadePagaPercentage = ((this.comAnuidadePaga / this.todosFiliados * 100).toFixed(0));
   filiadosInadimplentes: number = 321;
-  filiadosInadimplentesPercentage = ((this.filiadosInadimplentes/ this.todosFiliados * 100).toFixed(0));
+  filiadosInadimplentesPercentage = ((this.filiadosInadimplentes / this.todosFiliados * 100).toFixed(0));
   dadosIncompletos: number = 348
-  dadosIncompletosPercentage = ((this.dadosIncompletos/ this.todosFiliados * 100).toFixed(0));
+  dadosIncompletosPercentage = ((this.dadosIncompletos / this.todosFiliados * 100).toFixed(0));
 
   constructor() {
     this.users = [
@@ -163,8 +163,8 @@ export class Dashboard1Component implements OnInit {
             show: false
           },
           data: [
-            { value: this.todosFiliados, name: 'Filiados' },
-            { value: 0, name: 'Total' }
+            {value: this.todosFiliados, name: 'Filiados'},
+            {value: 0, name: 'Total'}
           ],
           color: ['#40b0d0', '#E0E0E0']
         }
@@ -190,8 +190,8 @@ export class Dashboard1Component implements OnInit {
             show: false
           },
           data: [
-            { value: this.comAnuidadePaga, name: 'Com anuidade paga' },
-            { value: this.todosFiliados - this.comAnuidadePaga, name: 'Outros' }
+            {value: this.comAnuidadePaga, name: 'Com anuidade paga'},
+            {value: this.todosFiliados - this.comAnuidadePaga, name: 'Outros'}
           ],
           color: ['#ed6796', '#E0E0E0']
         }
@@ -217,8 +217,8 @@ export class Dashboard1Component implements OnInit {
             show: false
           },
           data: [
-            { value: this.filiadosInadimplentes, name: 'Inadimplentes' },
-            { value: this.todosFiliados - this.filiadosInadimplentes, name: 'Outros' }
+            {value: this.filiadosInadimplentes, name: 'Inadimplentes'},
+            {value: this.todosFiliados - this.filiadosInadimplentes, name: 'Outros'}
           ],
           color: ['#009689', '#E0E0E0']
         }
@@ -244,8 +244,8 @@ export class Dashboard1Component implements OnInit {
             show: false
           },
           data: [
-            { value: this.dadosIncompletos, name: 'Dados incompletos' },
-            { value: this.todosFiliados - this.dadosIncompletos, name: 'Dados completos' }
+            {value: this.dadosIncompletos, name: 'Dados incompletos'},
+            {value: this.todosFiliados - this.dadosIncompletos, name: 'Dados completos'}
           ],
           color: ['#99a5ab', '#E0E0E0']
         }
