@@ -12,8 +12,6 @@ import {Component, OnInit} from '@angular/core';
 })
 export class Dashboard1Component implements OnInit {
   users: any[] = [];
-  data: any[] = [];
-  options: any[] = [];
   graphA: any;
   graphB: any;
   graphC: any;
@@ -137,10 +135,6 @@ export class Dashboard1Component implements OnInit {
         anotacao: 'Urgente'
       }
     ];
-
-    this.data = [10, 20, 30];
-
-    this.options = ['A', 'B', 'C'];
   }
 
   ngOnInit() {

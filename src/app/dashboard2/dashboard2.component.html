@@ -1,0 +1,83 @@
+<div class="font-quick flex flex-column align-items-center gap-3 bg-gray-50">
+  <div class="w-11">
+    <p class="text-xl">RELATÓRIO - RESERVAS DO CLUBE</p>
+    <p class="text-sm font-semibold">Informe os filtros desejados:</p>
+  </div>
+
+  <div
+    class="w-11 bg-white border-1 border-round border-bluegray-100 flex flex-row flex-wrap justify-content-between p-2 gap-2">
+    <div class="border-1 border-round border-bluegray-100 p-2" style="width: 49%">
+      <label class="block font-semibold mb-1">Período:</label>
+      <p-calendar appendTo="body" styleClass="h-2rem" class="p-inputtext-sm" dateFormat="dd/mm/yy"
+                  [showIcon]="true"></p-calendar>
+      -
+      <p-calendar appendTo="body" styleClass="h-2rem" class="p-inputtext-sm" dateFormat="dd/mm/yy"
+                  [showIcon]="true"></p-calendar>
+    </div>
+    <div class="border-1 border-round border-bluegray-100 p-2" style="width: 49%">
+      <label class="block font-semibold mb-1">Forma de Pagamento:</label>
+      <p-dropdown [options]="formasPagamento" placeholder="Todas" optionLabel="name" optionValue="id" styleClass="h-2rem"></p-dropdown>
+    </div>
+    <div class="border-1 border-round border-bluegray-100 p-2" style="width: 49%">
+      <label class="block font-semibold mb-1">Situação da reserva:</label>
+      <p-dropdown [options]="situacaoReserva" placeholder="Todas" optionLabel="name" optionValue="id" styleClass="h-2rem"></p-dropdown>
+    </div>
+    <div class="border-1 border-round border-bluegray-100 p-2 flex flex-row align-items-center justify-content-between" style="width: 49%">
+      <div>
+      <label class="block font-semibold mb-1">Complementares:</label>
+      <input pInputText type="text" class="field p-inputtext-sm mr-3 w-14rem h-2rem" placeholder="Digite o nome, CPF ou Matrícula"/>
+      </div>
+      <div class="">
+      <button pButton icon="pi pi-search" class="p-button-sm bg-blue-800 border-blue-800" style="height: 20%; width: 2%"></button>
+      <button pButton icon="pi pi-print" label="Imprimir" class="p-button-sm bg-gray-300 border-gray-300 text-black-alpha-90" style="width: 35%"></button>
+      <button pButton icon="pi pi-file-pdf" label="PDF" class="p-button-sm bg-gray-300 border-gray-300 text-black-alpha-90" style="width: 30%"></button>
+      <button pButton icon="pi pi-trash" class="p-button-sm bg-red-600 border-red-600" style="width: 2%"></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-11 p-2 border-round border-bluegray-100 bg-white">
+    <p-table [scrollable]="true" [value]="users" [paginator]="true" [rows]="10"
+             styleClass="p-datatable-gridlines p-datatable-striped p-datatable-sm"
+             [tableStyle]="{'min-width': '60rem'}">
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn>#</th>
+          <th pSortableColumn="nome" style="width:15%">Data Uso
+            <p-sortIcon class="w-1" field="nome"></p-sortIcon>
+          </th>
+          <th pSortableColumn="registro">Nº Chave
+            <p-sortIcon field="registro"></p-sortIcon>
+          </th>
+          <th pSortableColumn="dtNascimento">Item
+            <p-sortIcon field="dtNascimento"></p-sortIcon>
+          </th>
+          <th pSortableColumn="telefone">Associado
+            <p-sortIcon field="telefone"></p-sortIcon>
+          </th>
+          <th pSortableColumn="email">Forma Pagamento
+            <p-sortIcon field="email"></p-sortIcon>
+          </th>
+          <th pSortableColumn="anotacao">Situação
+            <p-sortIcon field="anotacao"></p-sortIcon>
+          </th>
+          <th pSortableColumn="valor">Valor (R$)
+            <p-sortIcon field="valor"></p-sortIcon>
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-user>
+        <tr>
+          <td>{{user.id}}</td>
+          <td>{{user.dataUso}}</td>
+          <td>{{user.nChave}}</td>
+          <td>{{user.item}}</td>
+          <td>{{user.associado}}</td>
+          <td>{{user.formaPagamento}}</td>
+          <td>{{user.situacao}}</td>
+          <td>{{user.valor}}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

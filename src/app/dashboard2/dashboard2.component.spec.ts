@@ -1,16 +1,16 @@
 // import { ComponentFixture, TestBed } from '@angular/core/testing';
 //
-// import { Dashboard1Component } from './dashboard1.component';
+// import { Dashboard2Component } from './dashboard2.component';
 //
-// describe('Dashboard1Component', () => {
-//   let component: Dashboard1Component;
-//   let fixture: ComponentFixture<Dashboard1Component>;
+// describe('Dashboard2Component', () => {
+//   let component: Dashboard2Component;
+//   let fixture: ComponentFixture<Dashboard2Component>;
 //
 //   beforeEach(() => {
 //     TestBed.configureTestingModule({
-//       declarations: [Dashboard1Component]
+//       declarations: [Dashboard2Component]
 //     });
-//     fixture = TestBed.createComponent(Dashboard1Component);
+//     fixture = TestBed.createComponent(Dashboard2Component);
 //     component = fixture.componentInstance;
 //     fixture.detectChanges();
 //   });

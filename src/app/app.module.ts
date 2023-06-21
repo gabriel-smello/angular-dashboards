@@ -10,11 +10,15 @@ import {TableModule} from "primeng/table";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ToastModule} from "primeng/toast";
 import {NgxEchartsModule} from "ngx-echarts";
+import { Dashboard2Component } from './dashboard2/dashboard2.component';
+import {CalendarModule} from "primeng/calendar";
+import {DropdownModule} from "primeng/dropdown";
 
 @NgModule({
   declarations: [
     AppComponent,
-    Dashboard1Component
+    Dashboard1Component,
+    Dashboard2Component
   ],
   imports: [
     BrowserModule,
@@ -26,7 +30,9 @@ import {NgxEchartsModule} from "ngx-echarts";
     ToastModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
-    })
+    }),
+    CalendarModule,
+    DropdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]
