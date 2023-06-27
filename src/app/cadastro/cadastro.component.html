@@ -28,23 +28,35 @@
       </div>
 
       <div class="field grid">
-        <label for="nRegistroAnterior" class="col-12 mb-2 md:col-2 md:mb-0">Nº Registro anterior * <em
-          class="ml-1 pi pi-question-circle cursor-pointer text-xs"
-          pTooltip="Texto explicando o campo"></em></label>
+        <div class="col-12 mb-2 md:col-2 md:mb-0">
+          <label for="nRegistroAnterior">Nº Registro anterior * <em
+            class="ml-1 pi pi-question-circle cursor-pointer text-xs"
+            pTooltip="Texto explicando o campo"></em></label>
+        </div>
         <div class="col-12 md:col-10">
           <input formControlName="nRegistroAnterior" id="nRegistroAnterior" pInputText
                  class="w-full p-inputtext-sm h-2rem shadow-1" placeholder="Digite o nº de registro anterior"/>
+          <div
+            *ngIf="form.get('nRegistroAnterior')?.invalid && (form.get('nRegistroAnterior')?.dirty || form.get('nRegistroAnterior')?.touched)">
+            <div class="text-red-500 text-xs mt-1">Nº Registro anterior obrigatório.</div>
+          </div>
         </div>
       </div>
 
       <div class="field grid">
-        <label for="academia" class="col-12 mb-2 md:col-2 md:mb-0">Academia * <em
-          class="ml-1 pi pi-question-circle cursor-pointer text-xs"
-          pTooltip="Texto explicando o campo"></em></label>
+        <div class="col-12 mb-2 md:col-2 md:mb-0">
+          <label for="academia">Academia * <em
+            class="ml-1 pi pi-question-circle cursor-pointer text-xs"
+            pTooltip="Texto explicando o campo"></em></label>
+        </div>
         <div class="col-12 md:col-10">
           <p-dropdown class="w-full p-inputtext-sm shadow-1 border-round" formControlName="academia" id="academia"
                       placeholder="Selecione..." styleClass="w-12 h-2rem" [options]="academias" optionValue="id"
                       optionLabel="nome"></p-dropdown>
+          <div
+            *ngIf="form.get('academia')?.invalid && (form.get('academia')?.dirty || form.get('academia')?.touched)">
+            <div class="text-red-500 text-xs mt-1">Academia obrigatória.</div>
+          </div>
         </div>
       </div>
 
@@ -99,7 +111,8 @@
         <div class="col-12 md:col-10">
           <p-calendar formControlName="nascimento" id="nascimento" appendTo="body"
                       class="p-inputtext-sm shadow-1 border-round" dateFormat="dd/mm/yy"
-                      [showIcon]="true" styleClass="w-12 h-2rem" placeholder="Digite a data de nascimento"></p-calendar>
+                      [showIcon]="true" styleClass="w-12 h-2rem"
+                      placeholder="Digite a data de nascimento"></p-calendar>
         </div>
       </div>
 
@@ -143,7 +156,8 @@
         <div class="col-12 md:col-10">
           <p-calendar formControlName="inicioPratica" id="inicioPratica" appendTo="body"
                       class="p-inputtext-sm shadow-1 border-round" dateFormat="dd/mm/yy"
-                      [showIcon]="true" styleClass="w-12 h-2rem" placeholder="Digite o início da prática"></p-calendar>
+                      [showIcon]="true" styleClass="w-12 h-2rem"
+                      placeholder="Digite o início da prática"></p-calendar>
         </div>
       </div>
 
