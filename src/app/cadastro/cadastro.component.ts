@@ -9,6 +9,19 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
     :host ::ng-deep .p-dropdown-label {
       transform: translateY(-20%);
     }
+
+    :host ::ng-deep .p-calendar .p-button,
+    :host ::ng-deep .p-calendar .p-button:hover {
+      background-color: var(--blue-800);
+      border-color: var(--blue-800);
+    }
+
+    :host ::ng-deep .p-highlight.p-togglebutton,
+    :host ::ng-deep .p-highlight.p-togglebutton:hover {
+      background: var(--blue-800);
+      border: none;
+      color: white;
+    }
   `]
 })
 export class CadastroComponent {
