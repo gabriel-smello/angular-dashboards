@@ -13,12 +13,19 @@ import {NgxEchartsModule} from "ngx-echarts";
 import { Dashboard2Component } from './dashboard2/dashboard2.component';
 import {CalendarModule} from "primeng/calendar";
 import {DropdownModule} from "primeng/dropdown";
+import { CadastroComponent } from './cadastro/cadastro.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {PaginatorModule} from "primeng/paginator";
+import {InputTextareaModule} from "primeng/inputtextarea";
+import {TooltipModule} from "primeng/tooltip";
+import {ToggleButtonModule} from "primeng/togglebutton";
 
 @NgModule({
   declarations: [
     AppComponent,
     Dashboard1Component,
-    Dashboard2Component
+    Dashboard2Component,
+    CadastroComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +39,12 @@ import {DropdownModule} from "primeng/dropdown";
       echarts: () => import('echarts')
     }),
     CalendarModule,
-    DropdownModule
+    DropdownModule,
+    ReactiveFormsModule,
+    PaginatorModule,
+    InputTextareaModule,
+    TooltipModule,
+    ToggleButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

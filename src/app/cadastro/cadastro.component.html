@@ -1,0 +1,189 @@
+<div class="font-quick bg-gray-50 flex flex-column align-items-center justify-content-center">
+  <div class="w-11 flex flex-row align-items-center p-2 gap-1">
+    <i class="pi pi-angle-left p-2 border-round bg-gray-400 cursor-pointer" routerLink="/"></i>
+    <i class="pi pi-user-plus mr-1"></i>
+    <p class="m-0 text-xl">CADASTRO DE FILIADO</p>
+  </div>
+
+  <form [formGroup]="form" class="w-10 flex align-items-center justify-content-center">
+    <div class="w-12">
+      <div class="field grid">
+        <label for="proprietario" class="col-12 mb-2 md:col-2 md:mb-0">Proprietário <em
+          class="ml-1 pi pi-question-circle cursor-pointer text-xs"
+          pTooltip="Texto explicando o campo"></em></label>
+        <div class="col-12 md:col-10">
+          <p-toggleButton formControlName="proprietario" id="proprietario" onIcon="pi pi-flag"
+                          offIcon="pi pi-flag-fill" styleClass="h-2rem"></p-toggleButton>
+        </div>
+      </div>
+
+      <div class="field grid">
+        <label for="nRegistroAutomatico" class="col-12 mb-2 md:col-2 md:mb-0">Nº Registro automático <em
+          class="ml-1 pi pi-question-circle cursor-pointer text-xs"
+          pTooltip="Texto explicando o campo"></em></label>
+        <div class="col-12 md:col-10">
+          <input formControlName="nRegistroAutomatico" id="nRegistroAutomatico" pInputText
+                 class="w-full p-inputtext-sm h-2rem shadow-1"/>
+        </div>
+      </div>
+
+      <div class="field grid">
+        <label for="nRegistroAnterior" class="col-12 mb-2 md:col-2 md:mb-0">Nº Registro anterior * <em
+          class="ml-1 pi pi-question-circle cursor-pointer text-xs"
+          pTooltip="Texto explicando o campo"></em></label>
+        <div class="col-12 md:col-10">
+          <input formControlName="nRegistroAnterior" id="nRegistroAnterior" pInputText
+                 class="w-full p-inputtext-sm h-2rem shadow-1" placeholder="Digite o nº de registro anterior"/>
+        </div>
+      </div>
+
+      <div class="field grid">
+        <label for="academia" class="col-12 mb-2 md:col-2 md:mb-0">Academia * <em
+          class="ml-1 pi pi-question-circle cursor-pointer text-xs"
+          pTooltip="Texto explicando o campo"></em></label>
+        <div class="col-12 md:col-10">
+          <p-dropdown class="w-full p-inputtext-sm shadow-1 border-round" formControlName="academia" id="academia"
+                      placeholder="Selecione..." styleClass="w-12 h-2rem" [options]="academias" optionValue="id"
+                      optionLabel="nome"></p-dropdown>
+        </div>
+      </div>
+
+      <div class="field grid">
+        <label for="nome" class="col-12 mb-2 md:col-2 md:mb-0">Nome * <em
+          class="ml-1 pi pi-question-circle cursor-pointer text-xs"
+          pTooltip="Texto explicando o campo"></em></label>
+        <div id="nome" class="flex col-12 md:col-10">
+          <input formControlName="nome" pInputText placeholder="Digite o nome"
+                 class="w-6 p-inputtext-sm mr-2 h-2rem shadow-1"/>
+          <input formControlName="sobrenome" pInputText placeholder="Digite o sobrenome"
+                 class="w-6 p-inputtext-sm h-2rem shadow-1"/>
+        </div>
+      </div>
+
+      <div class="field grid">
+        <label for="apelido" class="col-12 mb-2 md:col-2 md:mb-0">Apelido * <em
+          class="ml-1 pi pi-question-circle cursor-pointer text-xs"
+          pTooltip="Texto explicando o campo"></em></label>
+        <div class="col-12 md:col-10">
+          <input formControlName="apelido" id="apelido" pInputText placeholder="Digite o apelido"
+                 class="w-full p-inputtext-sm h-2rem shadow-1"/>
+        </div>
+      </div>
+
+      <div class="field grid">
+        <label for="rg" class="col-12 mb-2 md:col-2 md:mb-0">Nº RG <em
+          class="ml-1 pi pi-question-circle cursor-pointer text-xs"
+          pTooltip="Texto explicando o campo"></em></label>
+        <div id="rg" class="flex col-12 md:col-10">
+          <input formControlName="rg" pInputText placeholder="Digite o nº do RG"
+                 class="w-6 p-inputtext-sm mr-2 h-2rem shadow-1"/>
+          <input formControlName="orgaoExpeditor" pInputText placeholder="Digite o órgão expeditor do RG"
+                 class="w-6 p-inputtext-sm h-2rem shadow-1"/>
+        </div>
+      </div>
+
+      <div class="field grid">
+        <label for="cpf" class="col-12 mb-2 md:col-2 md:mb-0">CPF <em
+          class="ml-1 pi pi-question-circle cursor-pointer text-xs"
+          pTooltip="Texto explicando o campo"></em></label>
+        <div class="col-12 md:col-10">
+          <input formControlName="cpf" id="cpf" pInputText placeholder="Digite um CPF válido"
+                 class="w-full p-inputtext-sm h-2rem shadow-1"/>
+        </div>
+      </div>
+
+      <div class="field grid">
+        <label for="nascimento" class="col-12 mb-2 md:col-2 md:mb-0">Nascimento <em
+          class="ml-1 pi pi-question-circle cursor-pointer text-xs"
+          pTooltip="Texto explicando o campo"></em></label>
+        <div class="col-12 md:col-10">
+          <p-calendar formControlName="nascimento" id="nascimento" appendTo="body"
+                      class="p-inputtext-sm shadow-1 border-round" dateFormat="dd/mm/yy"
+                      [showIcon]="true" styleClass="w-12 h-2rem" placeholder="Digite a data de nascimento"></p-calendar>
+        </div>
+      </div>
+
+      <div class="field grid">
+        <label for="genero" class="col-12 mb-2 md:col-2 md:mb-0">Gênero <em
+          class="ml-1 pi pi-question-circle cursor-pointer text-xs"
+          pTooltip="Texto explicando o campo"></em></label>
+        <div class="col-12 md:col-10">
+          <p-dropdown class="p-inputtext-sm shadow-1 border-round" formControlName="genero" id="genero"
+                      placeholder="Selecione..." styleClass="w-12 h-2rem" [options]="generos" optionValue="id"
+                      optionLabel="nome"></p-dropdown>
+        </div>
+      </div>
+
+      <div class="field grid">
+        <label for="estadoCivil" class="col-12 mb-2 md:col-2 md:mb-0">Estado Civil <em
+          class="ml-1 pi pi-question-circle cursor-pointer text-xs"
+          pTooltip="Texto explicando o campo"></em></label>
+        <div class="col-12 md:col-10">
+          <p-dropdown class="p-inputtext-sm shadow-1 border-round" formControlName="estadoCivil" id="estadoCivil"
+                      placeholder="Selecione..." styleClass="w-12 h-2rem" [options]="estadosCivis" optionValue="id"
+                      optionLabel="nome"></p-dropdown>
+        </div>
+      </div>
+
+      <div class="field grid">
+        <label for="profissao" class="col-12 mb-2 md:col-2 md:mb-0">Profissão <em
+          class="ml-1 pi pi-question-circle cursor-pointer text-xs"
+          pTooltip="Texto explicando o campo"></em></label>
+        <div class="col-12 md:col-10">
+          <p-dropdown class="p-inputtext-sm shadow-1 border-round" formControlName="profissao" id="profissao"
+                      placeholder="Selecione..." styleClass="w-12 h-2rem" [options]="profissoes" optionValue="id"
+                      optionLabel="nome"></p-dropdown>
+        </div>
+      </div>
+
+      <div class="field grid">
+        <label for="inicioPratica" class="col-12 mb-2 md:col-2 md:mb-0">Início da prática <em
+          class="ml-1 pi pi-question-circle cursor-pointer text-xs"
+          pTooltip="Texto explicando o campo"></em></label>
+        <div class="col-12 md:col-10">
+          <p-calendar formControlName="inicioPratica" id="inicioPratica" appendTo="body"
+                      class="p-inputtext-sm shadow-1 border-round" dateFormat="dd/mm/yy"
+                      [showIcon]="true" styleClass="w-12 h-2rem" placeholder="Digite o início da prática"></p-calendar>
+        </div>
+      </div>
+
+      <div class="field grid">
+        <label for="graduacao" class="col-12 mb-2 md:col-2 md:mb-0">Graduação <em
+          class="ml-1 pi pi-question-circle cursor-pointer text-xs"
+          pTooltip="Texto explicando o campo"></em></label>
+        <div id="graduacao" class="flex col-12 md:col-10">
+          <input formControlName="nome" pInputText placeholder="Digite a graduação"
+                 class="w-6 p-inputtext-sm mr-2 h-2rem shadow-1"/>
+          <p-calendar formControlName="dtGraduacao" placeholder="Digite a data de conclusão" appendTo="body"
+                      class="w-6 p-inputtext-sm shadow-1 border-round" dateFormat="dd/mm/yy"
+                      [showIcon]="true" styleClass="w-12 h-2rem"></p-calendar>
+        </div>
+      </div>
+
+      <div class="field grid">
+        <label for="telefoneEmail" class="col-12 mb-2 md:col-2 md:mb-0">Telefone e E-mail<em
+          class="ml-1 pi pi-question-circle cursor-pointer text-xs"
+          pTooltip="Texto explicando o campo"></em></label>
+        <div id="telefoneEmail" class="flex col-12 md:col-10">
+          <input formControlName="telefone" pInputText placeholder="Digite um telefone válido"
+                 class="w-6 p-inputtext-sm mr-2 h-2rem shadow-1"/>
+          <input formControlName="email" pInputText placeholder="Digite um e-mail válido"
+                 class="w-6 p-inputtext-sm h-2rem shadow-1"/>
+        </div>
+      </div>
+
+      <div class="field grid">
+        <label for="anotacoes" class="col-12 mb-2 md:col-2 md:mb-0 block">Anotações <em
+          class="ml-1 pi pi-question-circle cursor-pointer text-xs"
+          pTooltip="Texto explicando o campo"></em></label>
+        <div class="flex col-12 md:col-10">
+        <textarea formControlName="anotacoes" id="anotacoes" rows="3" cols="30" pInputTextarea
+                  class="shadow-1 w-12"></textarea>
+        </div>
+      </div>
+      <div class="text-right">
+        <button pButton class="p-button-sm bg-blue-800 border-blue-800" icon="pi pi-plus" label="Salvar"></button>
+      </div>
+    </div>
+  </form>
+</div>
