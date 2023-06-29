@@ -1,3 +1,9 @@
 .font-quick {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
+
+@media screen and (min-width: 1500px) {
+  .xxl\:w-24rem {
+    width: 24rem !important;
+  }
+}

@@ -10,32 +10,32 @@
     <button pButton class="p-button-sm bg-blue-800 border-blue-800" icon="pi pi-plus" routerLink="/cadastro" label="Novo Filiado"></button>
   </div>
 
-  <div class="w-11 flex flex-row align-items-center justify-content-between">
-    <div class="w-20rem border-1 border-bluegray-100 bg-white border-round shadow-5 flex">
+  <div class="p-fluid w-11 flex flex-row align-items-center justify-content-between">
+    <div class="w-10rem md:w-12rem  lg:w-14rem xl:w-18rem xxl:w-24rem border-1 border-bluegray-100 bg-white border-round shadow-5 flex">
       <div class="flex-1" style="width: 100%; min-height: 100px" echarts [options]="graphA" [loading]="false"></div>
       <div class="flex-1 m-2 flex flex-column justify-content-center">
-        <p class="text-right text-lg text-blue-800 m-0 mb-1">{{todosFiliados}}</p>
+        <p class="text-right text-lg m-0 mb-1" style="color: #40b0d0">{{todosFiliados}}</p>
         <p class="text-right text-sm text-600 m-0">Todos Filiados</p>
       </div>
     </div>
-    <div class="w-20rem border-1 border-bluegray-100 bg-white border-round shadow-5 flex">
+    <div class="p-fluid w-10rem md:w-12rem lg:w-14rem xl:w-18rem xxl:w-24rem border-1 border-bluegray-100 bg-white border-round shadow-5 flex">
       <div class="flex-1" style="width: 100%; min-height: 100px" echarts [options]="graphB" [loading]="false"></div>
       <div class="flex-1 m-1 flex flex-column justify-content-center">
-        <p class="text-right text-lg text-blue-800 m-0 mb-1">{{comAnuidadePaga}}</p>
+        <p class="text-right text-lg m-0 mb-1" style="color: #ed6796">{{comAnuidadePaga}}</p>
         <p class="text-right text-sm text-600 m-0">Com auidade paga</p>
       </div>
     </div>
-    <div class="w-20rem border-1 border-bluegray-100 bg-white border-round shadow-5 flex">
+    <div class="p-fluid w-10rem md:w-12rem lg:w-14rem  xl:w-18rem xxl:w-24rem border-1 border-bluegray-100 bg-white border-round shadow-5 flex">
       <div class="flex-1" style="width: 100%; min-height: 100px" echarts [options]="graphC" [loading]="false"></div>
       <div class="flex-1 m-2 flex flex-column justify-content-center">
-        <p class="text-right text-lg text-blue-800 m-0 mb-1">{{filiadosInadimplentes}}</p>
+        <p class="text-right text-lg m-0 mb-1" style="color: #009689">{{filiadosInadimplentes}}</p>
         <p class="text-right text-sm text-600 m-0">Filiados inadimplentes</p>
       </div>
     </div>
-    <div class="w-20rem border-1 border-bluegray-100 bg-white border-round shadow-5 flex">
+    <div class="p-fluid w-10rem md:w-12rem lg:w-14rem xl:w-18rem xxl:w-24rem border-1 border-bluegray-100 bg-white border-round shadow-5 flex">
       <div class="flex-1" style="width: 100%; min-height: 100px" echarts [options]="graphD" [loading]="false"></div>
       <div class="flex-1 m-2 flex flex-column justify-content-center">
-        <p class="text-right text-lg text-blue-800 m-0 mb-1">{{dadosIncompletos}}</p>
+        <p class="text-right text-lg m-0 mb-1" style="color: #99a5ab">{{dadosIncompletos}}</p>
         <p class="text-right text-sm text-600 m-0">Dados incompletos</p>
       </div>
     </div>
